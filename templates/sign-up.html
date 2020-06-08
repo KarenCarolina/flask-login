@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{super()}} Sign-Up {% endblock%}
+{% block content%}
+</section> 
+<p class="p-separation"> Sign-Up</p>
+
+<section class="sign-up-form">
+    
+    <form action="{{url_for('sign_up')}}" method="post"> 
+      {{ sign_up_form.hidden_tag() }}
+      <div class="element">{{sign_up_form.email.label}}{{sign_up_form.email}}<br></div> 
+    <div class="element">{{sign_up_form.password.label}}{{sign_up_form.password}}<br></div>
+     <div class="element">{{sign_up_form.submit}}</div>
+  
+    </form> 
+</section> 
+{% endblock %}

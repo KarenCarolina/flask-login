@@ -1,0 +1,84 @@
+{% extends "base.html" %} {% block title %}{{super()}} Site {% endblock%} {%
+block content %}
+<div class="main-container">
+  <section class="slide">
+    <img
+      name="slider1"
+      id="slider1"
+      src="{{url_for('static',filename='/assets/imagen1.jpg')}}"
+      style="display: none;"
+      alt="imagen-slider"
+    />
+    <img
+      name="slider2"
+      id="slider2"
+      src="{{url_for('static',filename='/assets/imagen2.jpg')}}"
+      style="display: none;"
+      alt="imagen-slider"
+    />
+    <img
+      name="slider3"
+      id="slider3"
+      src="{{url_for('static',filename='/assets/imagen3.jpg')}}"
+      alt="imagen-slider"
+    />
+    <!-- <button id="previous">&larr;</button> -->
+    <i id="previous" class="fas fa-angle-left" style="font-size: 45px;"></i>
+    <!-- <button id="next">&rarr;</button> -->
+    <i id="next" class="fas fa-angle-right" style="font-size: 45px;"></i>
+  </section>
+  <p class="p-separation">Our Projects</p>
+  <section class="projects">
+    {% for row in projects %}
+    <div class="p-card">
+      <img
+        class="elipse"
+        src="{{url_for('static',filename='assets/project (2).jpg')}}"
+        alt="face1"
+      />
+      <h3 class="project-title">{{row.1}}</h3>
+      <p class="project-info">
+        {{row.2}}
+      </p>
+    </div>
+    {% endfor %}
+  </section>
+  <p class="p-separation">About</p>
+  <section class="about" id="about">
+    <figure>
+      <img
+        id="profile-pic"
+        src="{{url_for('static',filename='assets/face (1).jpg')}}"
+        alt="profile"
+      />
+    </figure>
+    <article>
+      <h1>Lisa Cornell</h1>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
+      repellat enim similique dolores vitae non quam quaerat, veniam, voluptatem
+      at alias tenetur reprehenderit eum voluptatum distinctio! Alias quisquam
+      nam ducimus.
+    </article>
+  </section>
+  <p class="p-separation">Habilidades</p>
+
+  <section class="habilidades">
+    <div class="habilidad">
+      <i class="fas fa-user-clock"></i>
+      <p>Respuesta Rapida</p>
+    </div>
+    <div class="habilidad">
+      <i class="fas fa-user-lock"></i>
+      <p>Seguridad en cada paso</p>
+    </div>
+    <div class="habilidad">
+      <i class="fas fa-shopping-cart"></i>
+      <p>Compra rapida</p>
+    </div>
+  </section>
+</div>
+
+{% endblock %} {% block body %}
+<script src="{{url_for('static',filename='/js/slider.js')}}"></script>
+
+{% endblock %}

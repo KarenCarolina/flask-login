@@ -1,0 +1,22 @@
+{% extends 'base.html'%} {% block title %}{{super()}} Welcome {% endblock%} {%
+block content%}
+
+<p>Welcome</p>
+
+{% block content%}
+
+<p class="p-separation">Add Project info</p>
+
+<section class="login-form">
+  <form action="{{url_for('welcome')}}" method="POST">
+    {{ project_form.hidden_tag() }}
+    <div class="element">
+      {{project_form.title.label}}{{project_form.title}}<br />
+    </div>
+    <div class="element">
+      {{project_form.description.label}}{{project_form.description}}<br />
+    </div>
+    <div class="element">{{project_form.submit}}</div>
+  </form>
+</section>
+{% endblock %} {% endblock %}

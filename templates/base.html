@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/04f825fa56.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+    <title>{% block title%}Company | {% endblock %}</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <figure>
+          <img
+            src="{{url_for('static',filename='/assets/temew.png')}}"
+            alt="logo"
+            width="150px"
+            height="45px"
+          />
+        </figure>
+        <ul class="menu">
+          <li><a href="{{url_for('index')}}">Home</a></li>
+          <li><a href="{{url_for('index')}}#about">About</a></li>
+          <li><a href="{{url_for('login')}}">Login</a></li>
+          <li><a href="{{url_for('logout')}}">Logout</a></li>
+          <li><a href="{{url_for('sign_up')}}">Sign Up</a></li>
+        </ul>
+      </nav>
+      <div>
+        <i class="fas fa-bars burger-button" id="burger-menu"></i>
+      </div>
+    </header>
+    {% block content%} {% endblock %}
+    <footer>
+      Desarrollado por Karen Cofré
+    </footer>
+    {% block body %}{% endblock%}
+    <script src="{{url_for('static',filename='/js/burger-button.js')}}"></script>
+    <script src="{{url_for('static',filename='/js/slider.js')}}"></script>
+  </body>
+</html>
